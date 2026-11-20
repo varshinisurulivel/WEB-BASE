@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EDI Dashboard</title>
+<style>
+  /* 1. ELLATHUKUM COMMON */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+  body { background: #f8f9f8; color: #222; }
+  .main { max-width: 1250px; margin: auto; padding: 20px; }
+
+  /* 2. MELA TOP BAR */
+  .topbar { background: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+  .topbar b { font-size: 20px; }
+  .topbar button { padding: 7px 14px; border: 1px solid #ddd; background: white; border-radius: 20px; cursor: pointer; }
+
+  /* 3. TITLE + SEARCH */
+  .title-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+  .title-row p { color: gray; font-size: 13px; margin-top: 4px; }
+  .title-row input { padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; width: 250px; }
+  .title-row button { padding: 8px 12px; border: 1px solid #ddd; background: white; border-radius: 8px; }
+
+  /* 4. TABS */
+  .tabs { display: flex; gap: 5px; margin: 20px 0 8px; background: white; width: fit-content; padding: 4px; border-radius: 8px; border: 1px solid #eee; }
+  .tabs button { border: none; background: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+  .tabs .active { background: #eef2f0; font-weight: bold; }
+  .date-text { font-size: 12px; color: #333; margin-bottom: 15px; }
+  .date-text span { background: #fff3cd; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+
+  /* 5. MELA 4 CARDS */
+  .kpi-row { display: flex; gap: 15px; }
+  .kpi-card { background: white; flex: 1; padding: 18px; border-radius: 12px; border: 1px solid #eee; }
+  .kpi-card h2 { font-size: 30px; margin: 12px 0; }
+  .kpi-card h2 span { font-size: 12px; color: gray; font-weight: normal; }
+  .kpi-card p { font-size: 12px; color: gray; border-top: 1px solid #eee; padding-top: 10px; }
+
+  /* 6. NADUVULA 2 PERIYA BOX */
+  .middle { display: flex; gap: 15px; margin-top: 15px; }
+  .box { background: white; padding: 18px; border-radius: 12px; border: 1px solid #eee; }
+  .box p { color: gray; font-size: 12px; margin-top: 3px; }
+
+  /* Transactions - Inbound / Outbound */
+  .two-col { display: flex; gap: 12px; margin-top: 15px; }
+  .mini-card { background: #f2f6f4; flex: 1; padding: 15px; border-radius: 10px; }
+  .mini-card h2 { font-size: 26px; margin: 10px 0; }
+  .mini-row { display: flex; justify-content: space-between; font-size: 12px; margin-top: 12px; }
+  .green { color: green; font-weight: bold; } .red { color: red; font-weight: bold; }
+  .label { font-size: 11px; color: gray; margin-top: 15px; }
+
+  /* Acknowledgments */
+  .ack-row { display: flex; gap: 12px; margin-top: 15px; }
+  .ack-card { background: #f8faf9; flex: 1; padding: 15px; border-radius: 10px; }
+  .ack-card h2 { font-size: 24px; margin: 5px 0; }
+  .ack-card p { color: black; font-size: 13px; margin-top: 8px; }
+
+  /* 7. KEEZHA LAST 3 BOX */
+  .bottom { display: flex; gap: 15px; margin-top: 15px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #eee; }
+  th { font-size: 11px; color: gray; }
+  .bar { background: #eee; height: 6px; border-radius: 10px; margin-top: 6px; overflow: hidden; }
+  .bar-fill { background: #e74c3c; height: 100%; width: 22.7%; }
+  .fail-row { display: flex; justify-content: space-between; font-size: 13px; margin-top: 15px; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR - SIDE MENU ILLA -->
+<div class="topbar">
+  <div><b> EDI</b> &nbsp; Balachandar SG ... &nbsp; UTC</div>
+  <div><button>← Back to Integrator</button> &nbsp;  &nbsp; </div>
+</div>
+
+<div class="main">
+
+  <!-- TITLE -->
+  <div class="title-row">
+    <div><h2>Dashboard</h2><p>EDI traffic, partner health and certificates at a glance.</p></div>
+    <div><input type="text" placeholder=" Search partners or document types"> <button> Refresh</button></div>
+  </div>
+
+  <!-- TABS -->
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="tabs"><button class="active">Transactions</button><button>Partners Health</button><button>Certificates</button></div>
+    <div><button style="padding:7px 12px; background:white; border:1px solid #ddd; border-radius:8px;">All partners ⌄</button> <button style="padding:7px 12px; background:#e6f4ea; border:1px solid #ddd; border-radius:8px;">Last 12 months ⌄</button></div>
+  </div>
+  <p class="date-text"><b>Nov 18, 2025 - Nov 17, 2026</b> · compared with Nov 18, 2024 - Nov 17, 2025 &nbsp; · &nbsp; All partners &nbsp; <span>Excludes acknowledgements (e.g. 997, 999) from transaction counts</span></p>
+
+  <!-- MELA 4 CARDS -->
+  <div class="kpi-row">
+    <div class="kpi-card">Total transactions<h2>20,573 <span>0.0% vs prior</span></h2><p>Inbound 9,618 - Outbound 10,955</p></div>
+    <div class="kpi-card">Success rate<h2>93.3% <span>0.0 pts vs prior</span></h2><p>19,209 processed without errors</p></div>
+    <div class="kpi-card">Failed transactions<h2>1,364 <span>0.0% vs prior</span></h2><p>Most failures: 850 Purchase Order</p></div>
+    <div class="kpi-card">Retry rate<h2>6.6% <span>0.0 pts vs prior</span></h2><p>1,361 retries - most in 850 PO, Out 810 Invoice</p></div>
+  </div>
+
+  <!-- NADUVU -->
+  <div class="middle">
+    <!-- TRANSACTIONS -->
+    <div class="box" style="flex:2">
+      <div style="display:flex; justify-content:space-between;"><h3>Transactions</h3><div><button style="padding:5px 10px; border-radius:6px; border:1px solid #ddd; background:white;">By direction</button> <button style="padding:5px 10px; border:none; background:none;">Chart</button></div></div>
+      <p>Top partner: Target - 22.0% of volume</p>
+      <div class="two-col">
+        <div class="mini-card">
+          <b>↓ Inbound</b> <span style="float:right; font-size:12px; color:gray;">0.0% vs prior</span>
+          <h2>9,618</h2>
+          <div class="mini-row"><span>● SUCCEEDED<br><b class="green">8,994</b></span><span>● FAILED<br><b class="red">624</b></span><span>SUCCESS<br><b>93.5%</b></span></div>
+          <p class="label">MOST FAILED DOCUMENT TYPES</p><p style="color:black; margin-top:6px;"><b>850</b> Purchase Order</p>
+        </div>
+        <div class="mini-card">
+          <b>↑ Outbound</b> <span style="float:right; font-size:12px; color:gray;">0.0% vs prior</span>
+          <h2>10,955</h2>
+          <div class="mini-row"><span>● SUCCEEDED<br><b class="green">10,215</b></span><span>● FAILED<br><b class="red">740</b></span><span>SUCCESS<br><b>93.2%</b></span></div>
+          <p class="label">MOST FAILED DOCUMENT TYPES</p><p style="color:black; margin-top:6px;"><b>810</b> Invoice<br><b>856</b> Advance Ship Notice</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACKNOWLEDGMENTS -->
+    <div class="box" style="flex:1.1">
+      <h3>Acknowledgments</h3><p>Confirmations (EDI 997 / 999) that a document was received and accepted</p>
+      <div class="ack-row">
+        <div class="ack-card"><small>↑ INBOUND</small><h2>93.7%</h2><small style="color:gray;">0.0 pts vs prior</small><p>● Acknowledged <b>8,007</b></p><p>● Rejected <b class="red">534</b></p><p>● Pending <b style="color:#b7791f;">847</b></p><p style="color:gray; margin-top:12px;">Most rejected<br><b style="color:black;">850 PO</b></p></div>
+        <div class="ack-card"><small>↑ OUTBOUND</small><h2>93.2%</h2><small style="color:gray;">0.0 pts vs prior</small><p>● Acknowledged <b>9,758</b></p><p>● Rejected <b class="red">703</b></p><p>● Pending <b style="color:#b7791f;">988</b></p><p style="color:gray; margin-top:12px;">Most rejected<br><b style="color:black;">810 Invoice</b></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEEZHA LAST 3 BOX -->
+  <div class="bottom">
+    <!-- 1. DOCUMENTS EXCHANGED -->
+    <div class="box" style="flex:2">
+      <h3>Documents exchanged - all partners</h3><p>850 Purchase Order drives the most volume; 850 Purchase Order drives the most failures.</p>
+      <table>
+        <tr><th>DOCUMENT TYPE</th><th>VOLUME ↓</th><th>SHARE</th><th>FAILED</th><th>RATE</th></tr>
+        <tr><td><b>850</b> Purchase Order</td><td>8,542</td><td>41.5%</td><td>820</td><td>9.6%</td></tr>
+        <tr><td><b>810</b> Invoice</td><td>5,210</td><td>25.3%</td><td>340</td><td>6.5%</td></tr>
+        <tr><td><b>856</b> Advance Ship Notice</td><td>3,120</td><td>15.1%</td><td>120</td><td>3.8%</td></tr>
+      </table>
+    </div>
+
+    <!-- 2. TOP FAILURE REASONS -->
+    <div class="box" style="flex:1.1">
+      <h3>Top failure reasons</h3><p>1,364 failed transactions - most frequent first</p>
+      <div class="fail-row"><span>1 &nbsp; AWS Transfer Family file transfer failed</span><span><b>309</b> &nbsp; 22.7%</span></div>
+      <div class="bar"><div class="bar-fill"></div></div>
+      <div class="fail-row"><span>2 &nbsp; Invalid EDI format</span><span><b>210</b> &nbsp; 15.4%</span></div>
+      <div class="bar"><div class="bar-fill" style="width:15.4%; background:#e67e22;"></div></div>
+      <div class="fail-row"><span>3 &nbsp; Partner connection timeout</span><span><b>145</b> &nbsp; 10.6%</span></div>
+      <div class="bar"><div class="bar-fill" style="width:10.6%; background:#f1c40f;"></div></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
