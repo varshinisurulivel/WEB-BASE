@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Mini Applications</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+
+.student-details{
+    line-height:1.8;
+}
+
+section{
+    background:white;
+    margin-top:20px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+section h2{
+    color:#2c3e50;
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#3498db;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+.result{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.error{
+    color:red;
+}
+
+#strength{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.weak{
+    color:red;
+}
+
+.medium{
+    color:orange;
+}
+
+.strong{
+    color:green;
+}
+
+.password-box{
+    position:relative;
+}
+
+.password-box button{
+    margin-top:10px;
+}
+
+footer{
+    text-align:center;
+    margin-top:20px;
+    background:#2c3e50;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+}
+
+@media(max-width:600px){
+    header,section,footer{
+        padding:15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <h1>JavaScript Mini Applications</h1>
+
+        <div class="student-details">
+            <p><strong>Student Name:</strong> Your Name</p>
+            <p><strong>Roll Number:</strong> Your Roll Number</p>
+            <p><strong>Class / Department:</strong> Your Department</p>
+            <p><strong>Batch / Academic Year:</strong> 2025 - 2026</p>
+            <p><strong>College Name:</strong> Your College Name</p>
+        </div>
+    </header>
+
+    <!-- Age Calculator -->
+    <section>
+        <h2>1. Age Calculator</h2>
+
+        <label for="dob">Enter Date of Birth:</label>
+        <input type="date" id="dob">
+
+        <button onclick="calculateAge()">Calculate Age</button>
+
+        <div id="ageResult" class="result"></div>
+    </section>
+
+    <!-- Password Strength Checker -->
+    <section>
+        <h2>2. Password Strength Checker</h2>
+
+        <label for="password">Enter Password:</label>
+
+        <div class="password-box">
+            <input type="password" id="password"
+                   placeholder="Type password..."
+                   onkeyup="checkPassword()">
+
+            <button onclick="togglePassword()">Show / Hide Password</button>
+        </div>
+
+        <div id="strength"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        Internship Programme Assignment | © 2026 All Rights Reserved
+    </footer>
+
+</div>
+
+<script>
+
+// Age Calculator
+function calculateAge(){
+
+    let dob = document.getElementById("dob").value;
+    let result = document.getElementById("ageResult");
+
+    if(dob === ""){
+        result.innerHTML =
+        "<span class='error'>Please select your Date of Birth.</span>";
+        return;
+    }
+
+    let birthDate = new Date(dob);
+    let today = new Date();
+
+    if(birthDate > today){
+        result.innerHTML =
+        "<span class='error'>Invalid Date of Birth.</span>";
+        return;
+    }
+
+    let ageYears = today.getFullYear() - birthDate.getFullYear();
+    let ageMonths = today.getMonth() - birthDate.getMonth();
+    let ageDays = today.getDate() - birthDate.getDate();
+
+    if(ageDays < 0){
+        ageMonths--;
+    }
+
+    if(ageMonths < 0){
+        ageYears--;
+        ageMonths += 12;
+    }
+
+    let diffTime = today - birthDate;
+    let totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    result.innerHTML =
+    "Age in Years: " + ageYears + "<br>" +
+    "Age in Months: " + (ageYears * 12 + ageMonths) + "<br>" +
+    "Age in Days: " + totalDays;
+}
+
+
+// Password Strength Checker
+function checkPassword(){
+
+    let password = document.getElementById("password").value;
+    let strength = document.getElementById("strength");
+
+    let score = 0;
+
+    if(password.length >= 8) score++;
+    if(/[A-Z]/.test(password)) score++;
+    if(/[a-z]/.test(password)) score++;
+    if(/[0-9]/.test(password)) score++;
+    if(/[!@#$%^&*(),.?":{}|<>]/.test(password)) score++;
+
+    if(password.length === 0){
+        strength.innerHTML = "";
+    }
+    else if(score <= 2){
+        strength.innerHTML = "Weak Password";
+        strength.className = "weak";
+    }
+    else if(score <= 4){
+        strength.innerHTML = "Medium Password";
+        strength.className = "medium";
+    }
+    else{
+        strength.innerHTML = "Strong Password";
+        strength.className = "strong";
+    }
+}
+
+
+// Show / Hide Password
+function togglePassword(){
+
+    let passwordField = document.getElementById("password");
+
+    if(passwordField.type === "password"){
+        passwordField.type = "text";
+    }
+    else{
+        passwordField.type = "password";
+    }
+}
+
+</script>
+
+</body>
+</html>

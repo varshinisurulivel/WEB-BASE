@@ -1,0 +1,219 @@
+<html>
+<head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+/* MAIN CONTAINER */
+.resume{
+    width:900px;
+    display:flex;
+    background:#fff;
+    box-shadow:0 0 15px rgba(0,0,0,0.15);
+}
+
+/* LEFT NAVIGATION */
+nav{
+    width:35%;
+    background:#f5e5ea;
+    padding:25px;
+    position:sticky;
+    top:0;
+    height:100vh;
+}
+
+/* PROFILE IMAGE */
+.profile{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.profile img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:5px solid #fff;
+}
+
+/* NAVIGATION MENU */
+nav ul{
+    list-style:none;
+}
+
+nav ul li{
+    margin:15px 0;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#d4577e;
+    font-weight:bold;
+    display:block;
+    padding:10px;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    background:#d4577e;
+    color:white;
+    transform:translateX(5px);
+}
+
+/* CONTACT DETAILS */
+.contact{
+    margin-top:20px;
+    border-top:1px solid #d6b7c0;
+    padding-top:15px;
+}
+
+.contact p{
+    margin:10px 0;
+    font-size:14px;
+}
+
+/* RIGHT CONTENT */
+.content{
+    width:65%;
+    padding:35px;
+}
+
+/* HEADER */
+.header h1{
+    font-size:52px;
+    color:#d4577e;
+}
+
+.header h2{
+    font-size:50px;
+    color:#000;
+}
+
+.header p{
+    color:#d4577e;
+    margin-top:5px;
+    font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+    margin-top:30px;
+    padding-bottom:20px;
+    border-bottom:1px solid #f1c3d0;
+}
+
+section h3{
+    color:#d4577e;
+    margin-bottom:15px;
+    text-transform:uppercase;
+}
+
+section p,
+section li{
+    line-height:1.8;
+    color:#444;
+}
+
+section ul{
+    padding-left:20px;
+}
+
+/* EDUCATION TIMELINE */
+.timeline{
+    border-left:3px solid #d4577e;
+    padding-left:20px;
+}
+
+.timeline .item{
+    margin-bottom:20px;
+    position:relative;
+}
+
+.timeline .item::before{
+    content:"";
+    width:12px;
+    height:12px;
+    background:#d4577e;
+    border-radius:50%;
+    position:absolute;
+    left:-27px;
+    top:5px;
+}
+
+/* FOOTER */
+.footer{
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+    font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .resume{
+        flex-direction:column;
+    }
+
+    nav{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .content{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+Use this navigation structure in HTML:
+
+<nav>
+    <ul>
+        <li><a href="#objective">Objective</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#declaration">Declaration</a></li>
+    </ul>
+</nav>
+
+And corresponding sections:
+
+<section id="objective">
+    <h3>Objective</h3>
+</section>
+
+<section id="education">
+    <h3>Education</h3>
+</section>
+
+<section id="projects">
+    <h3>Projects</h3>
+</section>
+
+<section id="achievements">
+    <h3>Achievements</h3>
+</section>
+
+<section id="declaration">
+    <h3>Declaration</h3>
+</section>
+</body>
+</html>

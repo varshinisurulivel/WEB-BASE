@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+<div class="resume">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+
+    <div class="profile">
+      <img src="profile.jpg" alt="Profile Photo">
+    </div>
+
+    <div class="section">
+      <h3><i class="fa-solid fa-circle-user"></i> CONTACT</h3>
+      <p><i class="fa-solid fa-envelope"></i> aaliyasharma@email.com</p>
+      <p><i class="fa-solid fa-phone"></i> 98765 43210</p>
+      <p><i class="fa-solid fa-location-dot"></i> Bangalore, India</p>
+      <p><i class="fa-brands fa-linkedin"></i> linkedin.com/in/aaliyasharma</p>
+    </div>
+
+    <div class="section">
+      <h3><i class="fa-solid fa-brain"></i> SKILLS</h3>
+      <ul>
+        <li>Communication</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+        <li>Teamwork</li>
+        <li>Microsoft Office</li>
+        <li>Quick Learner</li>
+      </ul>
+
+
+
+    </div>
+
+    <div class="section">
+      <h3><i class="fa-solid fa-language"></i> LANGUAGES</h3>
+      <ul>
+        <li>English</li>
+        <li>Hindi</li>
+        <li>Kannada</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+
+    <div class="header">
+      <h1>AALIYA <span>SHARMA</span></h1>
+      <h4>BSC STUDENT</h4>
+    </div>
+
+    <div class="content-section">
+      <h3><i class="fa-solid fa-user"></i> OBJECTIVE</h3>
+      <p>
+        Enthusiastic and dedicated BSc student seeking
+        opportunities to apply my knowledge and skills in a
+        dynamic environment while continuing to learn and grow professionally.
+      </p>
+    </div>
+
+    <div class="content-section">
+      <h3><i class="fa-solid fa-graduation-cap"></i> EDUCATION</h3>
+
+      <div class="edu">
+        <h4>BSc (PCM) – 1st Year (Pursuing)</h4>
+        <p>XYZ University, Bangalore</p>
+      </div>
+
+      <div class="edu">
+        <h4>12th (Science) – 88%</h4>
+        <p>ABC Pre-University College, Bangalore</p>
+        <span>2023</span>
+      </div>
+
+      <div class="edu">
+        <h4>10th (SSLC) – 93%</h4>
+        <p>ABC High School, Bangalore</p>
+        <span>2021</span>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h3><i class="fa-solid fa-folder"></i> PROJECTS</h3>
+      <ul>
+        <li>Completed a project on "Human Digestive System".</li>
+        <li>Participated in college science exhibition.</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h3><i class="fa-solid fa-star"></i> ACHIEVEMENTS</h3>
+      <ul>
+        <li>Secured 1st prize in science exhibition.</li>
+        <li>Active member of college cultural committee.</li>
+      </ul>
+
+    </div>
+
+    <div class="content-section">
+      <h3><i class="fa-solid fa-pen"></i> DECLARATION</h3>
+      <p>
+        I hereby declare that the above information is true
+        and correct to the best of my knowledge.
+      </p>
+
+      <div class="sign">
+        <p>Date: __________</p>
+        <p>Signature</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
