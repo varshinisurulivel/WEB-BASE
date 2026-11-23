@@ -3,42 +3,42 @@
 <head>
 <title>EDI Dashboard</title>
 <style>
-  /* 1. ELLATHUKUM COMMON */
+  
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
   body { background: #f8f9f8; color: #222; }
   .main { max-width: 1250px; margin: auto; padding: 20px; }
 
-  /* 2. MELA TOP BAR */
+  
   .topbar { background: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
   .topbar b { font-size: 20px; }
   .topbar button { padding: 7px 14px; border: 1px solid #ddd; background: white; border-radius: 20px; cursor: pointer; }
 
-  /* 3. TITLE + SEARCH */
+  
   .title-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
   .title-row p { color: gray; font-size: 13px; margin-top: 4px; }
   .title-row input { padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; width: 250px; }
   .title-row button { padding: 8px 12px; border: 1px solid #ddd; background: white; border-radius: 8px; }
 
-  /* 4. TABS */
+  
   .tabs { display: flex; gap: 5px; margin: 20px 0 8px; background: white; width: fit-content; padding: 4px; border-radius: 8px; border: 1px solid #eee; }
   .tabs button { border: none; background: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
   .tabs .active { background: #eef2f0; font-weight: bold; }
   .date-text { font-size: 12px; color: #333; margin-bottom: 15px; }
   .date-text span { background: #fff3cd; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
 
-  /* 5. MELA 4 CARDS */
+  
   .kpi-row { display: flex; gap: 15px; }
   .kpi-card { background: white; flex: 1; padding: 18px; border-radius: 12px; border: 1px solid #eee; }
   .kpi-card h2 { font-size: 30px; margin: 12px 0; }
   .kpi-card h2 span { font-size: 12px; color: gray; font-weight: normal; }
   .kpi-card p { font-size: 12px; color: gray; border-top: 1px solid #eee; padding-top: 10px; }
 
-  /* 6. NADUVULA 2 PERIYA BOX */
+  
   .middle { display: flex; gap: 15px; margin-top: 15px; }
   .box { background: white; padding: 18px; border-radius: 12px; border: 1px solid #eee; }
   .box p { color: gray; font-size: 12px; margin-top: 3px; }
 
-  /* Transactions - Inbound / Outbound */
+  
   .two-col { display: flex; gap: 12px; margin-top: 15px; }
   .mini-card { background: #f2f6f4; flex: 1; padding: 15px; border-radius: 10px; }
   .mini-card h2 { font-size: 26px; margin: 10px 0; }
@@ -46,13 +46,13 @@
   .green { color: green; font-weight: bold; } .red { color: red; font-weight: bold; }
   .label { font-size: 11px; color: gray; margin-top: 15px; }
 
-  /* Acknowledgments */
+  
   .ack-row { display: flex; gap: 12px; margin-top: 15px; }
   .ack-card { background: #f8faf9; flex: 1; padding: 15px; border-radius: 10px; }
   .ack-card h2 { font-size: 24px; margin: 5px 0; }
   .ack-card p { color: black; font-size: 13px; margin-top: 8px; }
 
-  /* 7. KEEZHA LAST 3 BOX */
+  
   .bottom { display: flex; gap: 15px; margin-top: 15px; }
   table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
   th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #eee; }
@@ -64,7 +64,7 @@
 </head>
 <body>
 
-<!-- TOP BAR - SIDE MENU ILLA -->
+
 <div class="topbar">
   <div><b> EDI</b> &nbsp; Balachandar SG ... &nbsp; UTC</div>
   <div><button>← Back to Integrator</button> &nbsp;  &nbsp; </div>
@@ -72,20 +72,20 @@
 
 <div class="main">
 
-  <!-- TITLE -->
+  
   <div class="title-row">
     <div><h2>Dashboard</h2><p>EDI traffic, partner health and certificates at a glance.</p></div>
     <div><input type="text" placeholder=" Search partners or document types"> <button> Refresh</button></div>
   </div>
 
-  <!-- TABS -->
+  
   <div style="display:flex; justify-content:space-between; align-items:center;">
     <div class="tabs"><button class="active">Transactions</button><button>Partners Health</button><button>Certificates</button></div>
     <div><button style="padding:7px 12px; background:white; border:1px solid #ddd; border-radius:8px;">All partners ⌄</button> <button style="padding:7px 12px; background:#e6f4ea; border:1px solid #ddd; border-radius:8px;">Last 12 months ⌄</button></div>
   </div>
   <p class="date-text"><b>Nov 18, 2025 - Nov 17, 2026</b> · compared with Nov 18, 2024 - Nov 17, 2025 &nbsp; · &nbsp; All partners &nbsp; <span>Excludes acknowledgements (e.g. 997, 999) from transaction counts</span></p>
 
-  <!-- MELA 4 CARDS -->
+  
   <div class="kpi-row">
     <div class="kpi-card">Total transactions<h2>20,573 <span>0.0% vs prior</span></h2><p>Inbound 9,618 - Outbound 10,955</p></div>
     <div class="kpi-card">Success rate<h2>93.3% <span>0.0 pts vs prior</span></h2><p>19,209 processed without errors</p></div>
@@ -93,9 +93,9 @@
     <div class="kpi-card">Retry rate<h2>6.6% <span>0.0 pts vs prior</span></h2><p>1,361 retries - most in 850 PO, Out 810 Invoice</p></div>
   </div>
 
-  <!-- NADUVU -->
+  
   <div class="middle">
-    <!-- TRANSACTIONS -->
+    
     <div class="box" style="flex:2">
       <div style="display:flex; justify-content:space-between;"><h3>Transactions</h3><div><button style="padding:5px 10px; border-radius:6px; border:1px solid #ddd; background:white;">By direction</button> <button style="padding:5px 10px; border:none; background:none;">Chart</button></div></div>
       <p>Top partner: Target - 22.0% of volume</p>
@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <!-- ACKNOWLEDGMENTS -->
+    
     <div class="box" style="flex:1.1">
       <h3>Acknowledgments</h3><p>Confirmations (EDI 997 / 999) that a document was received and accepted</p>
       <div class="ack-row">
@@ -125,9 +125,9 @@
     </div>
   </div>
 
-  <!-- KEEZHA LAST 3 BOX -->
+  
   <div class="bottom">
-    <!-- 1. DOCUMENTS EXCHANGED -->
+    
     <div class="box" style="flex:2">
       <h3>Documents exchanged - all partners</h3><p>850 Purchase Order drives the most volume; 850 Purchase Order drives the most failures.</p>
       <table>
@@ -138,7 +138,7 @@
       </table>
     </div>
 
-    <!-- 2. TOP FAILURE REASONS -->
+    
     <div class="box" style="flex:1.1">
       <h3>Top failure reasons</h3><p>1,364 failed transactions - most frequent first</p>
       <div class="fail-row"><span>1 &nbsp; AWS Transfer Family file transfer failed</span><span><b>309</b> &nbsp; 22.7%</span></div>
