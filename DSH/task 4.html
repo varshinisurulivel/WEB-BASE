@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DCKAP Careers</title>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body{
+    background: #fff;
+    color: #3d1512;
+  }
+
+  
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 50px;
+    background-color: brown;
+  }
+
+  .logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #3d1512;
+  }
+
+  .logo span{
+    font-size: 28px;
+  }
+
+  .links{
+    display: flex;
+    gap: 45px;
+    list-style: none;
+  }
+
+  .links li a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .links li a:hover{
+    color: #b23a1e;
+  }
+
+  .btn-dark{
+    background: #3d1512;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .btn-dark:hover{
+    background: #5a211b;
+  }
+
+  
+  .hero{
+    text-align: center;
+    padding: 110px 20px 60px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .hero h1{
+    font-size: 62px;
+    line-height: 1.15;
+    font-weight: 900;
+    color: #3d1512;
+    letter-spacing: -1px;
+  }
+
+  .hero p{
+    margin-top: 35px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #4a2b27;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-orange{
+    display: inline-block;
+    margin-top: 50px;
+    background: #b23a1e;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .btn-orange:hover{
+    background: #8f2d17;
+  }
+
+  
+  @media (max-width: 768px){
+    nav{ padding: 18px 20px; }
+    .links{ display: flex;gap: 45px;list-style: none;align-items: center;}
+    .hero h1{ font-size: 38px; }
+    .hero p{ font-size: 17px; }
+  }
+
+  marquee{
+    padding: 15px 0;
+    background: #fff8ee;
+  }
+
+  marquee img{
+    width: 280px;
+    height: 200px;  
+    border-radius: 12px;
+    margin-right: 20px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+  
+  <nav>
+    <div class="logo"><span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8wEp-bevYLmJsoC--bjygJywCguGAHWJCOi4p9cXMg&s=10" width="40" height="40"></img></span> DCKAP <span style="font-weight:400;">Careers</span></div>
+    <ul class="links">
+      
+      <li><a href="Values.html">Values</a></li>
+      <li><a href="assing.html">Benefits</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      
+    </ul>
+    <a href="onclick.html" class="btn-dark">All Openings</a>
+  </nav>
+
+  
+  <section class="hero">
+    <h1>Join our global team,<br>no matter where you are.</h1>
+    <p>DCKAP is a cloud-based software product company and we make systems talk to each other for manufacturers and distributors.</p>
+    <a href="web.html" class="btn-orange">Join Us Now →</a>
+  </section>
+
+  <marquee direction="left" scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuWebYaar6varRkH_pdZcRApSDSPw_Ho1cemCm1HujYQ&s=10">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbpJKFLjKXx9i778HZ9uEgTBLPRtk9nsMTC0cJZ-cOqw&s=10">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_etCXxLunkKzjcFzCCFH02twPiZp8YTjE9zqNGY4_uA&s=10">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv7YAxmJZQpZHujqksSc-x-KZ9FXp4l-OQYugN1-RhNA&s=10">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyUXhNnFp1Tpqfyvs6rVuzqel3FVsJKxmtsEYZUFvo7Q&s=10">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLZ0yh0PpOTrKDkletVxmBNgoKvSJ-7-8GpvPOL_5oA&s=10">
+</marquee>
+
+
+</body>
+</html>
